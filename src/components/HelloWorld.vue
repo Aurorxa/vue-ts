@@ -4,14 +4,13 @@
 </template>
 
 <script lang="tsx" setup>
-import { ref, reactive } from 'vue'
-let n = ref<number>(0)
+import { ref, Ref } from 'vue'
+let n:Ref<number> = ref<number>(0)
 
 // 增加方法
 const add = () => {
   n.value++
 }
-
 
 </script>
 
