@@ -5,7 +5,7 @@
 
 <script lang="tsx" setup>
 import { ref, Ref } from 'vue'
-let n:Ref<number> = ref<number>(0)
+let n: Ref<number> = ref<number>(0)
 
 // 增加方法
 const add = () => {
