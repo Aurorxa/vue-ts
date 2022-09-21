@@ -33,7 +33,7 @@ type SchoolType = {
 }
 
 // toRefs 的作用：在解构 reactive 得到的对象的时候，将其解构成响应式数据。
-const {name,address}:ToRefs<SchoolType>  = toRefs(reactive<SchoolType>({
+const { name, address }: ToRefs<SchoolType> = toRefs(reactive<SchoolType>({
   name: '江苏苏州大学',
   address: '江苏苏州'
 }))
