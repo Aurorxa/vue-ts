@@ -8,13 +8,13 @@
   </ul>
   <h2>学校信息</h2>
   <ul>
-    <li>学校名称：{{school.name}}</li>
-    <li>学校地址：{{school.address}}</li>
+    <li>学校名称：{{name}}</li>
+    <li>学校地址：{{address}}</li>
   </ul>
 </template>
 
 <script lang="tsx" setup>
-import { reactive, ref, Ref, UnwrapNestedRefs } from 'vue'
+import { reactive, ref, Ref, ToRefs, toRefs, UnwrapNestedRefs } from 'vue'
 const n: Ref<number> = ref<number>(0)
 
 type StudentType = {
@@ -32,10 +32,11 @@ type SchoolType = {
   address: string
 }
 
-const school:UnwrapNestedRefs<SchoolType> = reactive<SchoolType>({
+// toRefs 的作用：在解构 reactive 得到的对象的时候，将其解构成响应式数据。
+const {name,address}:ToRefs<SchoolType>  = toRefs(reactive<SchoolType>({
   name: '江苏苏州大学',
   address: '江苏苏州'
-})
+}))
 
 // 增加方法
 const add = () => {
