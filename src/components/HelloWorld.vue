@@ -14,7 +14,7 @@
 </template>
 
 <script lang="tsx" setup>
-import { reactive, ref, Ref, ToRefs, toRefs, UnwrapNestedRefs } from 'vue'
+import { reactive, ref, Ref, ToRefs, toRefs, UnwrapNestedRefs, watch } from 'vue'
 const n: Ref<number> = ref<number>(0)
 
 type StudentType = {
@@ -42,6 +42,11 @@ const { name, address }: ToRefs<SchoolType> = toRefs(reactive<SchoolType>({
 const add = () => {
   n.value++
 }
+
+watch(n, (newValue, oldValue) => {
+  console.log('@', newValue);
+  console.log('##', oldValue);
+})
 
 </script>
 
