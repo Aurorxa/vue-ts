@@ -14,7 +14,7 @@
 </template>
 
 <script lang="tsx" setup>
-import { reactive, ref, Ref } from 'vue'
+import { reactive, ref, Ref, UnwrapNestedRefs } from 'vue'
 const n: Ref<number> = ref<number>(0)
 
 type StudentType = {
@@ -32,7 +32,7 @@ type SchoolType = {
   address: string
 }
 
-const school = reactive<SchoolType>({
+const school:UnwrapNestedRefs<SchoolType> = reactive<SchoolType>({
   name: '江苏苏州大学',
   address: '江苏苏州'
 })
