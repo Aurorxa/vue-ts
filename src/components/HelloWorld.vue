@@ -16,7 +16,7 @@ type StudentType = {
   age: number
 }
 
-const student: Ref<StudentType> = ref<StudentType>({
+const student: Ref<Partial<StudentType>> = ref<Partial<StudentType>>({
   name: '许大仙',
   age: 18
 })
