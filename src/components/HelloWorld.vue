@@ -1,5 +1,6 @@
 <template>
   <div>当前n的值为：{{n}}</div>
+  <div>2倍n的值为：{{dbN}}</div>
   <button @click="add">点我+1</button>
   <h2>学生信息</h2>
   <ul>
@@ -14,6 +15,7 @@
 </template>
 
 <script lang="tsx" setup>
+import { computed } from '@vue/reactivity';
 import { reactive, ref, Ref, ToRefs, toRefs, UnwrapNestedRefs, watch } from 'vue'
 const n: Ref<number> = ref<number>(0)
 
@@ -47,6 +49,8 @@ watch(n, (newValue, oldValue) => {
   console.log('@', newValue);
   console.log('##', oldValue);
 })
+
+let dbN = computed(() => n.value * 2)
 
 </script>
 
