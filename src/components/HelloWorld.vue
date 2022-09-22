@@ -15,8 +15,7 @@
 </template>
 
 <script lang="tsx" setup>
-import { computed } from '@vue/reactivity';
-import { reactive, ref, Ref, ToRefs, toRefs, UnwrapNestedRefs, watch } from 'vue'
+import { reactive, ref, Ref, ToRefs, toRefs, UnwrapNestedRefs, watch, computed } from 'vue'
 const n: Ref<number> = ref<number>(0)
 
 type StudentType = {
