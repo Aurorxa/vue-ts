@@ -12,6 +12,7 @@
     <li>学校名称：{{name}}</li>
     <li>学校地址：{{address}}</li>
   </ul>
+  <h2>props {{num}}</h2>
 </template>
 
 <script lang="tsx" setup>
@@ -50,6 +51,14 @@ watch(n, (newValue, oldValue) => {
 })
 
 let dbN: ComputedRef<number> = computed(() => n.value * 2)
+
+interface Props {
+  num: number
+}
+
+withDefaults(defineProps<Props>(), {
+  num: 1000
+})
 
 </script>
 
