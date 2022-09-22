@@ -13,6 +13,7 @@
     <li>学校地址：{{address}}</li>
   </ul>
   <h2>props {{num}}</h2>
+  <button @click="handleClick">按钮</button>
 </template>
 
 <script lang="tsx" setup>
@@ -59,6 +60,15 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   num: 1000
 })
+
+
+const emit = defineEmits<{
+  (event: 'fn', n: number): void
+}>()
+
+const handleClick = () => {
+  emit('fn', n.value)
+}
 
 </script>
 
