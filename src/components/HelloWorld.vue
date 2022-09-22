@@ -15,7 +15,7 @@
 </template>
 
 <script lang="tsx" setup>
-import { reactive, ref, Ref, ToRefs, toRefs, watch, computed } from 'vue'
+import { reactive, ref, Ref, ToRefs, toRefs, watch, computed, ComputedRef } from 'vue'
 const n: Ref<number> = ref<number>(0)
 
 type StudentType = {
@@ -49,7 +49,7 @@ watch(n, (newValue, oldValue) => {
   console.log('##', oldValue);
 })
 
-let dbN = computed(() => n.value * 2)
+let dbN: ComputedRef<number> = computed(() => n.value * 2)
 
 </script>
 
